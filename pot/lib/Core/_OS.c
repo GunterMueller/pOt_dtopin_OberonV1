@@ -6,18 +6,23 @@
 #include <time.h>
 #include <limits.h>
 
-#ifdef __sun__
+#ifdef __sun__ 
+#include <sys/param.h>
+#include <sys/types.h>
+#include <sys/times.h>
+#include <unistd.h>
+static clock_t clock()
+{
+  times(&tm);
+  return tm.tms_utime + tm.tms_stime;
+}
+#elif __linux__ 
 #include <sys/param.h>
 #include <sys/types.h>
 #include <sys/times.h>
 #include <unistd.h>
 #define CLK_TCK HZ
 static struct tms tm;
-static clock_t clock()
-{
-  times(&tm);
-  return tm.tms_utime + tm.tms_stime;
-}
 #endif
 
 #include "OS.hi"
