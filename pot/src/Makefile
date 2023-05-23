@@ -2,9 +2,9 @@ POT=..
 
 #CC = lcc
 #CFLAGS = 
-CC = gcc
+CC = gcc -m32
 CFLAGS = -O2 -s
-CCLD = gcc
+CCLD = gcc -m32
 CLDFLAGS = -s
 CINCLUDES = -I$(POT)/lib -I$(POT)/lib/Core
 CLIBS = $(POT)/lib/libpOt.a $(POT)/lib/Core/libpOtCore.a -lm -lc

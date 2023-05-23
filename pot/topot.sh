@@ -12,4 +12,5 @@ else
   POTLAND=$1/lib/:$1/lib/Core/ ; export POTLAND
   PATH=$1/bin:$PATH
 fi
+echo $POT
 cd $POT

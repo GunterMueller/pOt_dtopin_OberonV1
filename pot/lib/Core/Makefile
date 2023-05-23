@@ -1,7 +1,7 @@
 POT = ../..
 
 CC=gcc
-CFLAGS = -O2
+CFLAGS = -m32 -O2
 #CC=lcc
 #CFLAGS = 
 CINCLUDES = -I.
