@@ -13,4 +13,5 @@ else
   PATH=$1/bin:$PATH
 fi
 echo $POT
+echo $POTLAND
 cd $POT
